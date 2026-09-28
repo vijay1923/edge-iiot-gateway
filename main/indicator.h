@@ -54,9 +54,35 @@ typedef struct
 
 } indicator_message_t;
 
+/* Indicator colors and patterns */
+typedef enum
+{
+    IND_COLOR_OFF,
+    IND_COLOR_BLUE,
+    IND_COLOR_GREEN,
+    IND_COLOR_YELLOW,
+    IND_COLOR_ORANGE,
+    IND_COLOR_RED,
+    IND_COLOR_PURPLE
+} indicator_color_t;
+
+/* Indicator patterns */
+typedef enum
+{
+    IND_PATTERN_OFF,
+    IND_PATTERN_SOLID,
+    IND_PATTERN_BLINK_SLOW,
+    IND_PATTERN_BLINK_FAST
+} indicator_pattern_t;
+
+/* Indicator visual representation */
+typedef struct
+{
+    indicator_color_t color;
+    indicator_pattern_t pattern;
+} indicator_visual_t;
 
 void indicator_init(void);
 void indicator_report(indicator_message_t message);
-
 
 #endif
